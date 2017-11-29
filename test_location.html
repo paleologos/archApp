@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html >
+<head >
+    <title></title>
+</head>
+<body>
+
+  <script type="text/javascript">
+  function btnSave_Click(){
+     var a=document.getElementById("hfLat").value;
+     var b= document.getElementById("hfLon").value ;
+     console.log(a);
+     console.log("++++++++++++++");
+     console.log(b);
+  }
+
+  </script>
+  <button type="button" name="button" onclick="btnSave_Click()">klik</button>
+
+
+    <script src="http://maps.google.com/maps/api/js?">
+    </script>
+    <script type="text/javascript">
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                document.getElementById("hfLat").value = latitude;
+                document.getElementById("hfLon").value = longitude;
+                var coords = new google.maps.LatLng(latitude, longitude);
+                var mapOptions = {
+                    zoom: 50,
+                    center: coords,
+                    mapTypeControl: true,
+                    navigationControlOptions: {
+                        style: google.maps.NavigationControlStyle.SMALL
+                    },
+                    mapTypeId: google.maps.MapTypeId.SATELLITE
+                };
+                map = new google.maps.Map(
+                document.getElementById("mapContainer"), mapOptions
+                );
+                var marker = new google.maps.Marker({
+                    position: coords,
+                    map: map,
+                    title: "Your current location!"
+                });
+
+            });
+        } else {
+            alert("Geolocation API is not supported in your browser.");
+        }
+
+    </script>
+    <style type="text/css">
+        #mapContainer
+        {
+            height: 500px;
+            width: 800px;
+            border: 10px solid #eaeaea;
+        }
+    </style>
+    <div id="mapContainer">
+    </div>
+    <form id="form1" >
+    <input:HiddenField id="hfLat"  name="latitude"/>
+    <input:HiddenField id="hfLon"  name="longitude"/>
+    <input type="submit" id="btnSave"  value="Save" onclick="btnSave_Click()" />
+    </form>
+
+
+</body>
+</html>
