@@ -11,9 +11,12 @@ var  express= require("express"),
      app.use(methodOverride("_method"));
      app.use(bodyParser.urlencoded({extended:true}));
      app.use(express.static(__dirname+"/public"));
+     app.use(express.static(__dirname+"/node_modules/bootstrap/dist"));
+     app.use(express.static(__dirname+"/node_modules/jquery/dist"));
+     app.use(express.static(__dirname+"/node_modules/tether/dist"));
 
      app.get("/", function(req, res){
-        res.send("Initial route working");
+        res.render("index");
      });
 
 
