@@ -1,6 +1,10 @@
 var  express= require("express"),
      bodyParser= require("body-parser"),
      methodOverride= require("method-override"),
+     
+     coords=[],
+     position={},
+     
 
 
      port= process.env.PORT || 3000,
@@ -17,6 +21,19 @@ var  express= require("express"),
 
      app.get("/", function(req, res){
         res.render("index");
+     });
+     
+     app.post("/", function(req, res){
+        var lat= req.body.latitude;
+        var long=req.body.longitude;
+        position.lat=lat;
+        position.long=long;
+        coords.push(position);
+        console.log("Your location is :"+ lat+"  "+ long);
+        coords.forEach(function(flag){
+          console.log(flag);
+        })
+        res.redirect("/");
      });
 
 
