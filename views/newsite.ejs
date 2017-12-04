@@ -1,0 +1,60 @@
+<% include ./partials/header %>
+
+
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+              <div class="jumbotron">
+                <h1>Add new archaeological site</h1>
+              </div>
+              <div class="card p-3">
+                <form>
+                        <div class="form-group ">
+                          <label for="title" ><h6>Title</h6></label>
+                          <input type="email" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Title">
+
+                        </div>
+
+                        <div class="form-group col-sm-12 col-xl-4 float-left">
+                          <label for="country"><h6>Country</h6></label>
+                          <input type="email" class="form-control" id="country" aria-describedby="emailHelp" placeholder="Country">
+
+                        </div>
+
+                        <div class="form-group col-sm-12 col-xl-4 float-left">
+                          <label for="region"><h6>Region</h6></label>
+                          <input type="email" class="form-control" id="region" aria-describedby="emailHelp" placeholder="Region">
+
+                        </div>
+
+                        <div class="form-group col-sm-12 col-xl-4 float-left">
+                          <label for="city"><h6>City</h6></label>
+                          <input type="email" class="form-control" id="city" aria-describedby="emailHelp" placeholder="City">
+
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleTextarea"><h6>Site description</h6></label>
+                          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="image"><h6>Image input</h6></label>
+                          <input type="file" class="form-control-file" id="image" aria-describedby="fileHelp">
+                          <small id="fileHelp" class="form-text text-muted">Please upload a photo of archaeological site</small>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+               </form>
+             </div>
+      </div>
+
+    </div>
+
+
+
+
+
+<% include ./partials/footer %>

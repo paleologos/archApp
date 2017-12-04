@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+body {
+  font-family: 'Raleway',sans-serif;
+  opacity: .9;
+  background-image: url("/images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+footer, {
+  color:white;
+  font-weight: bold;
+}
+#pointDescr{
+  color:black;
+  opacity:.7;
+  background-color:white;
+  font-weight: bold;
+}
+.jumbotron{
+  opacity:0.7;
+}

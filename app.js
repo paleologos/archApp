@@ -1,10 +1,10 @@
 var  express= require("express"),
      bodyParser= require("body-parser"),
      methodOverride= require("method-override"),
-     
+
      coords=[],
      position={},
-     
+
 
 
      port= process.env.PORT || 3000,
@@ -19,10 +19,18 @@ var  express= require("express"),
      app.use(express.static(__dirname+"/node_modules/jquery/dist"));
      app.use(express.static(__dirname+"/node_modules/tether/dist"));
 
+
+     //routes
+     //landing page
      app.get("/", function(req, res){
         res.render("index");
      });
-     
+
+     //add new site
+     app.get("/sites/new", function(req, res){
+        res.render("newsite");
+     });
+
      app.post("/", function(req, res){
         var lat= req.body.latitude;
         var long=req.body.longitude;
